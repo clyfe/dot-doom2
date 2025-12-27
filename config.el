@@ -113,6 +113,9 @@
 (after! doom-modeline
   (setq doom-modeline-buffer-file-name-style 'buffer-name))
 
+;; Dired reuse buffer
+(setf dired-kill-when-opening-new-dired-buffer t)
+
 ;; Projects
 (setq projectile-project-search-path
       '("~/dev" "~/work/dev"))
