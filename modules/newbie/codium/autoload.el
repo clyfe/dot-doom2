@@ -146,15 +146,16 @@
   (when newbie-codium/killed-file-list
     (find-file (pop newbie-codium/killed-file-list))))
 
-(add-hook 'kill-buffer-hook #'newbie-codium/add-file-to-killed-file-list)
-
 ;;; ON/OFF
 
 ;;;###autoload
-(defun newbie-codium/advices-add ()
+(defun newbie-codium/install ()
   "Enables advices when `newbie-codium' mode is activated."
   (progn
-    ;;; Jumper follow
+    ;; Hooks
+    (add-hook 'kill-buffer-hook #'newbie-codium/add-file-to-killed-file-list)
+
+    ;; Jumper follow
     (advice-add 'push-mark :after #'newbie-codium/better-jumper-advice)
     (advice-add 'switch-to-buffer :after #'newbie-codium/better-jumper-advice)
     (advice-add 'find-file :after #'newbie-codium/better-jumper-advice)
@@ -167,10 +168,13 @@
     (advice-add 'right-char :around #'newbie-codium/right-char-around)))
 
 ;;;###autoload
-(defun newbie-codium/advices-remove ()
+(defun newbie-codium/uninstall ()
   "Remove advices when `newbie-codium' mode is deactivated."
   (progn
-    ;;; Jumper follow
+    ;; Hooks
+    (remove-hook 'kill-buffer-hook #'newbie-codium/add-file-to-killed-file-list)
+
+    ;; Jumper follow
     (advice-remove 'push-mark #'newbie-codium/better-jumper-advice)
     (advice-remove 'switch-to-buffer #'newbie-codium/better-jumper-advice)
     (advice-remove 'find-file #'newbie-codium/better-jumper-advice)

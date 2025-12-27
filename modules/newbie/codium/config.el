@@ -6,7 +6,7 @@
 (setq cua-keep-region-after-copy t)
 
 ;; Advices
-(newbie-codium/advices-add)
+(newbie-codium/install)
 
 ;; Globals
 (map! [escape] 'doom/escape
