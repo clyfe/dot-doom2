@@ -59,12 +59,14 @@
 
       ;; More
       "C-g" 'goto-line
+      "C-S-g" 'magit
       "C-d" 'newbie-codium/duplicate-thing
       "C-/" 'newbie-codium/comment-dwim
       "C-S-e" '+treemacs/toggle
       "C-b" '+treemacs/toggle
       "C-\\" 'split-window-horizontally
 
+      ;; Horizontal scroll
       "<wheel-left>" 'newbie-codium/scroll-right
       "<wheel-right>" 'newbie-codium/scroll-left)
 
