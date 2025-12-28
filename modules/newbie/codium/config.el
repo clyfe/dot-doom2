@@ -62,7 +62,7 @@
       "C-S-g" 'magit
       "C-d" 'newbie-codium/duplicate-thing
       "C-/" 'newbie-codium/comment-dwim
-      "C-S-e" '+treemacs/toggle
+      "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it
       "C-b" '+treemacs/toggle
       "C-\\" 'split-window-horizontally
 

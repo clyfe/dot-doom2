@@ -146,6 +146,16 @@
   (when newbie-codium/killed-file-list
     (find-file (pop newbie-codium/killed-file-list))))
 
+;;; Treemacs
+
+;;;###autoload
+(defun newbie-codium/treemacs-open-or-go-to-it ()
+  "Open Treemacs and/or go to it."
+  (interactive)
+  (pcase (treemacs-current-visibility)
+    (`visible (other-popup))
+    (_ (+treemacs/toggle))))
+
 ;;; ON/OFF
 
 ;;;###autoload
