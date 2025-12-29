@@ -46,3 +46,11 @@
 (map! :map clojure-mode-map
       "DEL" 'sp-backward-delete-char
       "C-M-j" 'cider-jack-in-clj)
+
+;; Python
+(map! :after python-mode
+      :map python-mode-map
+      "<backtab>" nil)
+(map! :after python-ts-mode
+      :map python-ts-mode-map
+      "<backtab>" nil)

@@ -173,10 +173,12 @@
 ;;;###autoload
 (defun newbie-codium/keyboard-indent (&optional arg)
   (interactive)
-  (let ((deactivate-mark nil))  ; keep region
-    (indent-rigidly (newbie-codium/region-line-beg)
-                    (newbie-codium/region-line-end)
-                    (* (or arg 1) tab-width))))
+  (if (region-active-p)
+      (let ((deactivate-mark nil))  ; keep region
+        (indent-rigidly (newbie-codium/region-line-beg)
+                        (newbie-codium/region-line-end)
+                        (* (or arg 1) tab-width)))
+    (indent-for-tab-command)))
 
 ;;;###autoload
 (defun newbie-codium/keyboard-unindent (&optional arg)

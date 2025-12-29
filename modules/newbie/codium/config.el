@@ -32,10 +32,6 @@
       ;; Selection
       "C-a" 'mark-whole-buffer
 
-      ;; Indent/Dedent
-      "<tab>" 'newbie-codium/keyboard-indent
-      "<backtab>" 'newbie-codium/keyboard-unindent
-
       ;; Autocomplete
       "C-SPC" 'completion-at-point
 
@@ -76,6 +72,11 @@
       ;; Horizontal scroll
       "<wheel-left>" 'newbie-codium/scroll-right
       "<wheel-right>" 'newbie-codium/scroll-left)
+
+;; Indent/Dedent
+(map! :map prog-mode-map
+      "<tab>" 'newbie-codium/keyboard-indent
+      "<backtab>" 'newbie-codium/keyboard-unindent)
 
 ;; Undo Fu
 (map! :after undo-fu
