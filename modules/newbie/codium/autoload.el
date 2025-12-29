@@ -156,6 +156,33 @@
     (`visible (other-popup))
     (_ (+treemacs/toggle))))
 
+;;; Indent/Dedent
+
+;; https://emacs.stackexchange.com/questions/36646/what-prevents-emacs-from-indenting-and-how-can-i-force-it-to
+
+(defun newbie-codium/region-line-beg ()
+  (if (region-active-p)
+      (save-excursion (goto-char (region-beginning)) (line-beginning-position))
+    (line-beginning-position)))
+
+(defun newbie-codium/region-line-end ()
+  (if (region-active-p)
+      (save-excursion (goto-char (region-end)) (line-end-position))
+    (line-end-position)))
+
+;;;###autoload
+(defun newbie-codium/keyboard-indent (&optional arg)
+  (interactive)
+  (let ((deactivate-mark nil))  ; keep region
+    (indent-rigidly (newbie-codium/region-line-beg)
+                    (newbie-codium/region-line-end)
+                    (* (or arg 1) tab-width))))
+
+;;;###autoload
+(defun newbie-codium/keyboard-unindent (&optional arg)
+  (interactive)
+  (newbie-codium/keyboard-indent (* -1 (or arg 1))))
+
 ;;; ON/OFF
 
 ;;;###autoload

@@ -32,6 +32,13 @@
       ;; Selection
       "C-a" 'mark-whole-buffer
 
+      ;; Indent/Dedent
+      "<tab>" 'newbie-codium/keyboard-indent
+      "<backtab>" 'newbie-codium/keyboard-unindent
+
+      ;; Autocomplete
+      "C-SPC" 'completion-at-point
+
       ;; Undo/Redo
       "C-z" 'undo-fu-only-undo
       "C-S-z" 'undo-fu-only-redo
