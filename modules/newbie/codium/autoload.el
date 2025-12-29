@@ -115,7 +115,7 @@
     (select-window (window-at (cadr (mouse-position))
                               (cddr (mouse-position))
                               (car (mouse-position))))
-    (scroll-right 2)))
+    (scroll-right 1)))
 
 ;;;###autoload
 (defun newbie-codium/scroll-left()
@@ -124,7 +124,7 @@
     (select-window (window-at (cadr (mouse-position))
                               (cddr (mouse-position))
                               (car (mouse-position))))
-    (scroll-left 2)))
+    (scroll-left 1)))
 
 ;;; Reopen closed
 
