@@ -113,8 +113,9 @@
 (after! doom-modeline
   (setq doom-modeline-buffer-file-name-style 'buffer-name))
 
-;; Dired reuse buffer
-(setf dired-kill-when-opening-new-dired-buffer t)
+;; Dired
+(setf dired-kill-when-opening-new-dired-buffer t) ; reuse buffer
+(setq delete-by-moving-to-trash t) ; use trash
 
 ;; Projects
 (setq projectile-project-search-path
