@@ -36,14 +36,9 @@
       :map cider-repl-mode-map
       "C-l" 'cider-repl-clear-buffer)
 
-(map! :after ein
-      :map poly-ein-mode-map
-      "C-<return>" 'ein:worksheet-execute-cell-km
-      "M-<return>" 'ein:worksheet-execute-cell-km
-      "C-M-<return>" 'ein:worksheet-execute-all-cells)
-
 ;; Clojure
-(map! :map clojure-mode-map
+(map! :after clojure-mode
+      :map clojure-mode-map
       "DEL" 'sp-backward-delete-char
       "C-M-j" 'cider-jack-in-clj)
 
@@ -54,3 +49,8 @@
 (map! :after python-ts-mode
       :map python-ts-mode-map
       "<backtab>" nil)
+(map! :after ein
+      :map poly-ein-mode-map
+      "C-<return>" 'ein:worksheet-execute-cell-km
+      "M-<return>" 'ein:worksheet-execute-cell-km
+      "C-M-<return>" 'ein:worksheet-execute-all-cells)
