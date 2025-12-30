@@ -68,6 +68,7 @@
       "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it
       "C-b" '+treemacs/toggle
       "C-\\" 'split-window-horizontally
+      "<f2>" 'lsp-rename
 
       ;; Horizontal scroll
       "<wheel-left>" 'newbie-codium/scroll-right
