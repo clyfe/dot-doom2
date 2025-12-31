@@ -153,7 +153,7 @@
   "Open Treemacs and/or go to it."
   (interactive)
   (pcase (treemacs-current-visibility)
-    (`visible (other-popup))
+    (`visible (treemacs-select-window))
     (_ (+treemacs/toggle))))
 
 ;;; Indent/Dedent
