@@ -118,6 +118,9 @@
 (setq delete-by-moving-to-trash t) ; use trash
 (setq dired-listing-switches "-al --group-directories-first")
 
+;; Org
+(setq org-support-shift-select t)
+
 ;; Projects
 (setq projectile-project-search-path
       '("~/dev" "~/work/dev"))
