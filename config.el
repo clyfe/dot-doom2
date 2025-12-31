@@ -98,13 +98,19 @@
 ;; Ruler
 (add-hook 'prog-mode-hook #'display-fill-column-indicator-mode)
 
+;; Rainbow colors
+(add-hook 'prog-mode-hook #'rainbow-mode)
+
+;; Rainbow delimiters
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;; Fiddle & tftpl
 (add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tftpl\\'" . yaml-ts-mode))
 
 ;; Git blame line
 (setq blamer-min-offset 30)
-(global-blamer-mode)
+(global-blamer-mode 1)
 
 ;; Headerline
 (setq lsp-headerline-breadcrumb-enable t)

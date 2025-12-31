@@ -54,3 +54,5 @@
 ;; (unpin! t)
 
 (package! blamer)
+(package! rainbow-delimiters)
+(package! rainbow-mode)
