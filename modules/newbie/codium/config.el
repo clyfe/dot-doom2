@@ -108,3 +108,9 @@
       :map magit-mode-map
       ;; Free C-w for closing
       "C-w" nil)
+
+;; Treemacs
+(map! :after treemacs
+      :map treemacs-mode-map
+      ;; Free C-w for closing
+      "<f2>" 'treemacs-rename-file)
