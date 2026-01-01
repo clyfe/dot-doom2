@@ -71,6 +71,10 @@
       "<f2>" 'lsp-rename
       "C-," 'customize
 
+      ;; Font
+      "C-=" 'doom/increase-font-size
+      "C--" 'doom/decrease-font-size
+
       ;; Horizontal scroll
       "<wheel-left>" 'newbie-codium/scroll-right
       "<wheel-right>" 'newbie-codium/scroll-left)
