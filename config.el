@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "CN"
-      user-mail-address "clyfe@m14")
+(setopt user-full-name "CN"
+        user-mail-address "clyfe@m14")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -32,15 +32,15 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setopt doom-theme 'doom-one)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
+(setopt display-line-numbers-type t)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setopt org-directory "~/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
@@ -79,18 +79,14 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 ;; Exit without prompting
-(setq confirm-kill-emacs nil)
+(setopt confirm-kill-emacs nil)
 
 ;; Cursor
-(setq-default cursor-type 'bar)
-(blink-cursor-mode 1)
+(setopt cursor-type 'bar)
+(blink-cursor-mode +1)
 
 ;; Tab always indent
-(setq tab-always-indent 'complete)
-
-;; Delete whitespace on save, including in markdown-mode
-(setq ws-butler-global-exempt-modes
-      '(special-mode comint-mode term-mode eshell-mode diff-mode))
+(setopt tab-always-indent 'complete)
 
 ;; Saveplace
 (save-place-mode +1)
@@ -109,27 +105,28 @@
 (add-to-list 'auto-mode-alist '("\\.tftpl\\'" . yaml-ts-mode))
 
 ;; Git blame line
-(setq blamer-min-offset 30)
-(global-blamer-mode 1)
+(global-blamer-mode +1)
 
 ;; Headerline
 (setq lsp-headerline-breadcrumb-enable t)
 
 ;; Modeline
 (after! doom-modeline
-  (setq doom-modeline-buffer-file-name-style 'buffer-name))
+  (setopt doom-modeline-buffer-file-name-style 'buffer-name))
 
 ;; Dired
-(setq dired-kill-when-opening-new-dired-buffer t) ; reuse buffer
-(setq delete-by-moving-to-trash t) ; use trash
-(setq dired-listing-switches "-al --group-directories-first")
+(setopt dired-kill-when-opening-new-dired-buffer t) ; reuse buffer
+(setopt delete-by-moving-to-trash t) ; use trash
+(setopt dired-listing-switches "-al --group-directories-first")
 
 ;; Org
-(setq org-support-shift-select t)
+(setopt org-support-shift-select t)
+
+;; Fix
+(setopt diff-hl-bmp-max-width 16)
 
 ;; Projects
-(setq projectile-project-search-path
-      '("~/dev" "~/work/dev"))
+(setopt projectile-project-search-path '("~/dev" "~/work/dev"))
 
 ;; My very much custom bindings
 (load! "+bindings")

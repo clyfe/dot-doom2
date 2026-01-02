@@ -1,9 +1,9 @@
 ;;; newbie/codium/config.el -*- lexical-binding: t; -*-
 
 ;; Cua mode
-(setq cua-rectangle-mark-key (kbd "C-x r")) ; free C-<return> for other purposeses
+(setopt cua-rectangle-mark-key (kbd "C-x r")) ; free C-<return> for other purposeses
 (cua-mode +1)
-(setq cua-keep-region-after-copy t)
+(setopt cua-keep-region-after-copy t)
 
 ;; Advices
 (newbie-codium/install)
