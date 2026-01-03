@@ -8,75 +8,86 @@
 ;; Advices
 (newbie-codium/install)
 
-;; Globals
-(map! [escape] 'doom/escape
+(map! [escape] 'doom/escape)
 
-      ;; Tabs
-      "C-<prior>" 'centaur-tabs-backward
-      "C-<next>" 'centaur-tabs-forward
-      "C-S-<prior>" 'centaur-tabs-move-current-tab-to-left
-      "C-S-<next>" 'centaur-tabs-move-current-tab-to-right
+;; Tabs and buffers
+(if (modulep! :ui tabs)
+    (map! "C-<prior>" 'centaur-tabs-backward
+          "C-<next>" 'centaur-tabs-forward
+          "C-S-<prior>" 'centaur-tabs-move-current-tab-to-left
+          "C-S-<next>" 'centaur-tabs-move-current-tab-to-right)
+  (map! "C-<prior>" 'previous-buffer
+        "C-<next>" 'next-buffer))
 
-      ;; Code navigation
-      "M-<left>" 'better-jumper-jump-backward
-      "M-<right>" 'better-jumper-jump-forward
+;; Code navigation
+(map! "M-<left>" 'better-jumper-jump-backward
+      "M-<right>" 'better-jumper-jump-forward)
 
-      ;; Scroll
-      "C-<up>" 'newbie-codium/scroll-up-in-place
-      "C-<down>" 'newbie-codium/scroll-down-in-place
+;; Code navigation
+(map! "M-<left>" 'better-jumper-jump-backward
+      "M-<right>" 'better-jumper-jump-forward)
 
-      ;; Movement
-      "<home>" 'doom/backward-to-bol-or-indent
-      "<end>" 'doom/forward-to-last-non-comment-or-eol
+;; Scroll
+(map! "C-<up>" 'newbie-codium/scroll-up-in-place
+      "C-<down>" 'newbie-codium/scroll-down-in-place)
 
-      ;; Selection
-      "C-a" 'mark-whole-buffer
+;; Movement
+(map! "<home>" 'doom/backward-to-bol-or-indent
+      "<end>" 'doom/forward-to-last-non-comment-or-eol)
 
-      ;; Autocomplete
-      "C-SPC" 'completion-at-point
+;; Selection
+(map! "C-a" 'mark-whole-buffer)
 
-      ;; Undo/Redo
-      "C-z" 'undo-fu-only-undo
-      "C-S-z" 'undo-fu-only-redo
+;; Autocomplete
+(map! "C-SPC" 'completion-at-point)
 
-      ;; Files
-      "C-p" 'projectile-find-file
+;; Undo/Redo
+(map! "C-z" 'undo-fu-only-undo
+      "C-S-z" 'undo-fu-only-redo)
+
+;; Files
+(map! "C-p" 'projectile-find-file
       "C-S-p" 'execute-extended-command
       "C-o" 'find-file
       "C-s" 'save-buffer
       "C-w" 'kill-current-buffer
       "C-S-t" 'newbie-codium/reopen-killed-file
-      "C-r" 'projectile-switch-project
-      "C-n" 'centaur-tabs--create-new-empty-buffer
+      "C-r" 'projectile-switch-project)
 
-      ;; Find
-      "C-f" '+default/search-buffer
-      "C-S-f" '+default/search-project
+(when (modulep! :ui tabs)
+  (map! "C-n" 'centaur-tabs--create-new-empty-buffer))
 
-      ;; Replace
-      "C-h" 'anzu-query-replace
-      "C-S-h" 'projectile-replace
+;; Find
+(map! "C-f" '+default/search-buffer
+      "C-S-f" '+default/search-project)
 
-      ;; Term
-      "C-j" '+term/toggle
+;; Replace
+(map! "C-h" 'anzu-query-replace
+      "C-S-h" 'projectile-replace)
 
-      ;; More
-      "C-g" 'goto-line
-      "C-S-g" 'magit
+;; Term
+(map! "C-j" '+term/toggle)
+
+;; More
+(map! "C-g" 'goto-line
       "C-d" 'newbie-codium/duplicate-thing
       "C-/" 'newbie-codium/comment-dwim
-      "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it
-      "C-b" '+treemacs/toggle
       "C-\\" 'split-window-horizontally
-      "<f2>" 'lsp-rename
-      "C-," 'customize
+      "C-," 'customize)
+(when (modulep! :tools magit)
+  (map! "C-S-g" 'magit))
+(when (modulep! :ui treemacs)
+  (map! "C-b" '+treemacs/toggle
+        "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it))
+(when (modulep! :tools lsp)
+  (map! "<f2>" 'lsp-rename))
 
-      ;; Font
-      "C-=" 'doom/increase-font-size
-      "C--" 'doom/decrease-font-size
+;; Font
+(map! "C-=" 'doom/increase-font-size
+      "C--" 'doom/decrease-font-size)
 
-      ;; Horizontal scroll
-      "<wheel-left>" 'newbie-codium/scroll-right
+;; Horizontal scroll
+(map! "<wheel-left>" 'newbie-codium/scroll-right
       "<wheel-right>" 'newbie-codium/scroll-left)
 
 ;; Indent/Dedent
