@@ -122,9 +122,6 @@
 ;; Org
 (setopt org-support-shift-select t)
 
-;; Fix
-(setopt diff-hl-bmp-max-width 16)
-
 ;; Projects
 (setopt projectile-project-search-path '("~/dev" "~/work/dev"))
 
