@@ -10,14 +10,12 @@
 
 ;; Elisp
 (map! :map emacs-lisp-mode-map
-      "DEL" 'sp-backward-delete-char
       "C-<return>" 'eros-eval-last-sexp
       "M-<return>" 'eros-eval-defun
       "C-M-<return>" 'eval-buffer)
 
 ;; Elisp scratch
 (map! :map lisp-interaction-mode-map
-      "DEL" 'sp-backward-delete-char
       "C-<return>" 'eros-eval-last-sexp
       "M-<return>" 'eros-eval-defun
       "C-M-<return>" 'eval-buffer
@@ -39,7 +37,6 @@
 ;; Clojure
 (map! :after clojure-mode
       :map clojure-mode-map
-      "DEL" 'sp-backward-delete-char
       "C-M-j" 'cider-jack-in-clj)
 
 ;; Python
