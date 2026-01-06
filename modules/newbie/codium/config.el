@@ -66,7 +66,10 @@
       "C-S-h" 'projectile-replace)
 
 ;; Term
-(map! "C-j" '+term/toggle)
+(when (modulep! :term term)
+  (map! "C-j" '+term/toggle))
+(when (modulep! :term vterm)
+  (map! "C-j" '+vterm/toggle))
 
 ;; More
 (map! "C-g" 'goto-line
