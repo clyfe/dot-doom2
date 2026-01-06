@@ -23,10 +23,6 @@
 (map! "M-<left>" 'better-jumper-jump-backward
       "M-<right>" 'better-jumper-jump-forward)
 
-;; Code navigation
-(map! "M-<left>" 'better-jumper-jump-backward
-      "M-<right>" 'better-jumper-jump-forward)
-
 ;; Scroll
 (map! "C-<up>" 'newbie-codium/scroll-up-in-place
       "C-<down>" 'newbie-codium/scroll-down-in-place)
