@@ -112,7 +112,8 @@
 
 ;; Modeline
 (after! doom-modeline
-  (setopt doom-modeline-buffer-file-name-style 'buffer-name))
+  (setopt doom-modeline-buffer-file-name-style 'buffer-name)
+  (setopt doom-modeline-vcs-max-length 50))
 
 ;; Dired
 (setopt dired-kill-when-opening-new-dired-buffer t) ; reuse buffer
