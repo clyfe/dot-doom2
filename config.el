@@ -100,6 +100,10 @@
 ;; Rainbow delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+;; Clojure strict
+(add-hook 'clojure-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-ts-mode-hook #'smartparens-strict-mode)
+
 ;; Hungry delete
 (setopt hungry-delete-join-reluctantly t)
 (global-hungry-delete-mode)
