@@ -56,3 +56,4 @@
 (package! blamer)
 (package! rainbow-delimiters)
 (package! rainbow-mode)
+(package! hungry-delete)

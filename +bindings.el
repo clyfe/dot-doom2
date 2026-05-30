@@ -38,14 +38,15 @@
 (map! :after clojure-mode
       :map clojure-mode-map
       "C-M-j" 'cider-jack-in-clj)
+(map! :after clojure-ts-mode
+      :map clojure-ts-mode-map
+      "M-d" 'sp-kill-sexp)
 
 ;; Python
-(map! :after python-mode
-      :map python-mode-map
-      "<backtab>" nil)
-(map! :after python-ts-mode
-      :map python-ts-mode-map
-      "<backtab>" nil)
+(map! :map python-mode-map
+      "<backtab>" 'newbie-codium/keyboard-unindent)
+(map! :map python-ts-mode-map
+      "<backtab>" 'newbie-codium/keyboard-unindent)
 (map! :after ein
       :map poly-ein-mode-map
       "C-<return>" 'ein:worksheet-execute-cell-km

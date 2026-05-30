@@ -100,6 +100,10 @@
 ;; Rainbow delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+;; Hungry delete
+(setopt hungry-delete-join-reluctantly t)
+(global-hungry-delete-mode)
+
 ;; Fiddle & tftpl
 (add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.tftpl\\'" . yaml-ts-mode))
@@ -124,7 +128,7 @@
 (setopt org-support-shift-select t)
 
 ;; Projects
-(setopt projectile-project-search-path '("~/dev" "~/work/dev"))
+(setopt projectile-project-search-path '("~/dev"))
 
 ;; My very much custom bindings
 (load! "+bindings")
