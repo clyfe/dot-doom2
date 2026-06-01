@@ -57,3 +57,4 @@
 (package! rainbow-delimiters)
 (package! rainbow-mode)
 (package! hungry-delete)
+(package! eca :recipe (:host github :repo "editor-code-assistant/eca-emacs" :files ("*.el")))
