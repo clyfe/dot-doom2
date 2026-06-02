@@ -1,6 +1,17 @@
 ;;; bindings.el -*- lexical-binding: t; -*-
 
-;; My verry much custom bindings
+;;;; My verry much custom bindings
+
+;;; Clear REPL
+
+(defun clyfe/clear-repl ()
+  "Like `cider-repl-clear-buffer' but can be called from the Clojure buffer."
+  (interactive)
+  (if-let ((buffer (cider-current-repl)))
+      (with-current-buffer buffer
+        (cider-repl-clear-buffer))))
+
+;;; Bindings
 
 ;; Paredit
 (map! :after smartparens
@@ -10,6 +21,7 @@
 
 ;; Elisp
 (map! :map emacs-lisp-mode-map
+      "<tab>" 'indent-pp-sexp
       "C-<return>" 'eros-eval-last-sexp
       "M-<return>" 'eros-eval-defun
       "C-M-<return>" 'eval-buffer)
@@ -28,7 +40,8 @@
       "M-<return>" 'cider-eval-defun-at-point
       "C-M-<return>" 'cider-load-buffer
       "<tab>" 'cider-format-defun
-      "C-M-j" 'cider-jack-in)
+      "C-M-j" 'cider-jack-in
+      "C-l" 'clyfe/clear-repl)
 
 (map! :after cider
       :map cider-repl-mode-map
