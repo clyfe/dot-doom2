@@ -100,7 +100,11 @@
 ;; Rainbow delimiters
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-;; Clojure strict
+;; Elisp
+(add-hook 'lisp-interaction-mode-hook #'aggressive-indent-mode)
+(add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
+
+;; Clojure
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-ts-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-mode-hook #'aggressive-indent-mode)
