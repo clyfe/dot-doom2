@@ -104,6 +104,11 @@
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-ts-mode-hook #'smartparens-strict-mode)
 
+;; CIDER
+;; https://github.com/clojure-emacs/cider/issues/2595
+;; https://github.com/clojure-emacs/cider/issues/3219
+(setopt cider-repl-display-output-before-window-boundaries t)
+
 ;; Hungry delete
 (setopt hungry-delete-join-reluctantly t)
 (global-hungry-delete-mode)
