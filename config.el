@@ -103,6 +103,8 @@
 ;; Clojure strict
 (add-hook 'clojure-mode-hook #'smartparens-strict-mode)
 (add-hook 'clojure-ts-mode-hook #'smartparens-strict-mode)
+(add-hook 'clojure-mode-hook #'aggressive-indent-mode)
+(add-hook 'clojure-ts-mode-hook #'aggressive-indent-mode)
 
 ;; CIDER
 ;; https://github.com/clojure-emacs/cider/issues/2595
@@ -110,8 +112,8 @@
 (setopt cider-repl-display-output-before-window-boundaries t)
 
 ;; Hungry delete
-(setopt hungry-delete-join-reluctantly t)
-(global-hungry-delete-mode)
+;; (setopt hungry-delete-join-reluctantly t)
+;; (global-hungry-delete-mode)
 
 ;; Fiddle & tftpl
 (add-to-list 'auto-mode-alist '("\\.fiddle\\'" . clojure-ts-mode))
