@@ -78,8 +78,10 @@
 (when (modulep! :ui treemacs)
   (map! "C-b" '+treemacs/toggle
         "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it))
-(when (modulep! :tools lsp)
+(when (modulep! :tools lsp -eglot)
   (map! "<f2>" 'lsp-rename))
+(when (modulep! :tools lsp +eglot)
+  (map! "<f2>" 'eglot-rename))
 
 ;; Font
 (map! "C-=" 'doom/increase-font-size
