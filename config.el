@@ -128,8 +128,9 @@
 ;; Git blame line
 (global-blamer-mode +1)
 
-;; Headerline
-(setq lsp-headerline-breadcrumb-enable t)
+;; LSP
+(setopt lsp-headerline-breadcrumb-enable t)
+(setopt lsp-enable-indentation nil)
 
 ;; Modeline
 (after! doom-modeline
