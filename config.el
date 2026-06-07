@@ -101,6 +101,8 @@
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
 ;; Elisp
+(add-hook 'lisp-interaction-mode-hook #'smartparens-strict-mode)
+(add-hook 'emacs-lisp-mode-hook #'smartparens-strict-mode)
 (add-hook 'lisp-interaction-mode-hook #'aggressive-indent-mode)
 (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode)
 
