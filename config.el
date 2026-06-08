@@ -129,18 +129,19 @@
 (global-blamer-mode +1)
 
 ;; LSP
-(setopt lsp-headerline-breadcrumb-enable t)
-(setopt lsp-enable-indentation nil)
+(setopt lsp-headerline-breadcrumb-enable t
+        lsp-enable-indentation nil
+        lsp-lens-enable nil)
 
 ;; Modeline
 (after! doom-modeline
-  (setopt doom-modeline-buffer-file-name-style 'buffer-name)
-  (setopt doom-modeline-vcs-max-length 50))
+  (setopt doom-modeline-buffer-file-name-style 'buffer-name
+          doom-modeline-vcs-max-length 50))
 
 ;; Dired
-(setopt dired-kill-when-opening-new-dired-buffer t) ; reuse buffer
-(setopt delete-by-moving-to-trash t) ; use trash
-(setopt dired-listing-switches "-al --group-directories-first")
+(setopt dired-kill-when-opening-new-dired-buffer t ; reuse buffer
+        delete-by-moving-to-trash t ; use trash
+        dired-listing-switches "-al --group-directories-first")
 
 ;; Org
 (setopt org-support-shift-select t)
