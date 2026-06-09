@@ -24,7 +24,8 @@
       "<tab>" 'indent-pp-sexp
       "C-<return>" 'eros-eval-last-sexp
       "M-<return>" 'eros-eval-defun
-      "C-M-<return>" 'eval-buffer)
+      "C-M-<return>" 'eval-buffer
+      "M-d" 'sp-kill-sexp)
 
 ;; Elisp scratch
 (map! :map lisp-interaction-mode-map
