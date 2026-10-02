@@ -66,3 +66,8 @@
       "C-<return>" 'ein:worksheet-execute-cell-km
       "M-<return>" 'ein:worksheet-execute-cell-km
       "C-M-<return>" 'ein:worksheet-execute-all-cells)
+
+;; Treemacs
+(map! :after treemacs
+      :map treemacs-mode-map
+      [mouse-1] 'treemacs-single-click-expand-action)

@@ -125,4 +125,5 @@
 (map! :after treemacs
       :map treemacs-mode-map
       ;; Free C-w for closing
-      "<f2>" 'treemacs-rename-file)
+      "<f2>" 'treemacs-rename-file
+      "C-j" '+term/toggle)

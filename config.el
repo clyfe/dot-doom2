@@ -149,5 +149,8 @@
 ;; Projects
 (setopt projectile-project-search-path '("~/dev"))
 
+(use-package! preview-tab
+  :config (preview-tab-mode 1))
+
 ;; My very much custom bindings
 (load! "+bindings")
