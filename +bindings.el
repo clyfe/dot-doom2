@@ -152,4 +152,6 @@
       :map java-ts-mode-map
       "<f5>" 'clyfe/compile-and-run-java)
 (map! :map python-mode-map
+      "<f5>" 'clyfe/run-python-file
+      :map python-ts-mode-map
       "<f5>" 'clyfe/run-python-file)
