@@ -130,6 +130,8 @@
 
 ;; Compile and run
 (map! :map c-mode-base-map
+      "<f5>" 'clyfe/compile-and-run-c-or-cpp
+      :map c++-ts-mode-map
       "<f5>" 'clyfe/compile-and-run-c-or-cpp)
 (map! :map java-mode-map
       "<f5>" 'clyfe/compile-and-run-java
