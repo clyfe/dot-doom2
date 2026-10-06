@@ -17,7 +17,7 @@ If it's already expanded (or is a leaf), move to the next line."
 
 (defun clyfe/treemacs-left-collapse-or-up ()
   "Collapse the current treemacs node if it is open.
-If it is already closed (or is a leaf), move up one line."
+If it is already closed (or is a leaf), move to parent."
   (interactive)
   (let ((state (treemacs-button-get (treemacs-current-button) :state)))
     (pcase state
