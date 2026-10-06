@@ -1,4 +1,4 @@
-;;; run.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/+bindings/run.el -*- lexical-binding: t; -*-
 
 ;;;; Compile and run file
 

@@ -1,4 +1,4 @@
-;;; preview.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/+bindings/preview.el -*- lexical-binding: t; -*-
 
 ;;;; Preview tab
 

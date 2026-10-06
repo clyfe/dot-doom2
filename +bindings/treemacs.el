@@ -1,4 +1,4 @@
-;;; preview.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/+bindings/treemacs.el -*- lexical-binding: t; -*-
 
 ;;;; Treemacs
 

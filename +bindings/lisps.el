@@ -1,4 +1,4 @@
-;;; bindings.el -*- lexical-binding: t; -*-
+;;; $DOOMDIR/+bindings/lisps.el -*- lexical-binding: t; -*-
 
 ;;;; My very much custom bindings
 
@@ -55,14 +55,3 @@
 (map! :after clojure-ts-mode
       :map clojure-ts-mode-map
       "M-d" 'sp-kill-sexp)
-
-;; Python
-(map! :map python-mode-map
-      "<backtab>" 'newbie-codium/keyboard-unindent)
-(map! :map python-ts-mode-map
-      "<backtab>" 'newbie-codium/keyboard-unindent)
-(map! :after ein
-      :map poly-ein-mode-map
-      "C-<return>" 'ein:worksheet-execute-cell-km
-      "M-<return>" 'ein:worksheet-execute-cell-km
-      "C-M-<return>" 'ein:worksheet-execute-all-cells)
