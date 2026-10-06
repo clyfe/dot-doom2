@@ -29,8 +29,7 @@
                       (shell-quote-argument out)))
          (default-directory (file-name-directory buffer-file-name))
          (buf (compile cmd t)))
-    (when-let ((win (get-buffer-window buf)))
-      (select-window win))))
+    (pop-to-buffer buf)))
 
 (defun clyfe/compile-and-run-java ()
   "Compile and run the Java file in the current buffer."
@@ -45,8 +44,7 @@
                       (shell-quote-argument file)
                       (shell-quote-argument class)))
          (buf (compile cmd t)))
-    (when-let ((win (get-buffer-window buf)))
-      (select-window win))))
+    (pop-to-buffer buf)))
 
 (defun clyfe/run-python-file ()
   "Save the current buffer, run its file with Python, and focus the output."
