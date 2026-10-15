@@ -185,6 +185,15 @@
   (interactive)
   (newbie-codium/keyboard-indent (* -1 (or arg 1))))
 
+;;; Preview
+
+;;;###autoload
+(defun newbie-codium/open-and-keep (&optional arg)
+  "Open the file at point, then call `preview-tab-keep'."
+  (interactive "P")
+  (treemacs-visit-node-no-split arg)
+  (preview-tab-keep))
+
 ;;; ON/OFF
 
 ;;;###autoload

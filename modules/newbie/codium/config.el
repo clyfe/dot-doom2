@@ -79,7 +79,8 @@
   (map! "C-b" '+treemacs/toggle
         "C-S-e" 'newbie-codium/treemacs-open-or-go-to-it))
 (when (modulep! :tools lsp -eglot)
-  (map! "<f2>" 'lsp-rename))
+  (map! "<f2>" 'lsp-rename
+        "M-F" 'lsp-format-buffer))
 (when (modulep! :tools lsp +eglot)
   (map! "<f2>" 'eglot-rename))
 
@@ -97,10 +98,11 @@
       "<backtab>" 'newbie-codium/keyboard-unindent)
 
 ;; Undo Fu
-(map! :after undo-fu
-      :map undo-fu-mode-map
-      ;; Free C-/ for commenting
-      "C-/" nil)
+(when (modulep! :emacs undo)
+  (map! :after undo-fu
+        :map undo-fu-mode-map
+        ;; Free C-/ for commenting
+        "C-/" nil))
 
 ;; Term
 (map! :after term
@@ -116,14 +118,23 @@
       "C-S-v" 'vterm-yank)
 
 ;; Magit
-(map! :after magit
-      :map magit-mode-map
-      ;; Free C-w for closing
-      "C-w" nil)
+(when (modulep! :tools magit)
+  (map! :after magit
+        :map magit-mode-map
+        ;; Free C-w for closing
+        "C-w" nil))
 
 ;; Treemacs
-(map! :after treemacs
-      :map treemacs-mode-map
-      ;; Free C-w for closing
-      "<f2>" 'treemacs-rename-file
-      "C-j" '+term/toggle)
+(when (modulep! :ui treemacs)
+  (map! :after treemacs
+        :map treemacs-mode-map
+        ;; Free C-w for closing
+        "<f2>" 'treemacs-rename-file
+        [double-mouse-1] 'newbie-codium/open-and-keep ; Preview tab
+        "C-j" '+term/toggle))
+
+;; Preview tab
+(when (modulep! :ui tabs)
+  (map! :after centaur-tabs
+        :map centaur-tabs-mode-map
+        [tab-line double-mouse-1] 'preview-tab-keep))

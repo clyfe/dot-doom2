@@ -58,4 +58,3 @@
 (package! rainbow-mode)
 ;; (package! hungry-delete)
 (package! aggressive-indent)
-(package! preview-tab)

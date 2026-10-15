@@ -75,3 +75,7 @@
       "<f5>" 'clyfe/run-python-file
       :map python-ts-mode-map
       "<f5>" 'clyfe/run-python-file)
+
+;; Close
+(map! :map comint-mode-map
+      "<f5>" 'doom/escape)

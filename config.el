@@ -154,7 +154,6 @@
 
 ;; My very much custom bindings
 (load! "+bindings/treemacs")
-(load! "+bindings/preview")
 (load! "+bindings/run")
 (load! "+bindings/lisps")
 (load! "+bindings/python")
