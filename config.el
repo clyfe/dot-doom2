@@ -153,7 +153,6 @@
   :config (preview-tab-mode 1))
 
 ;; My very much custom bindings
-(load! "+bindings/treemacs")
 (load! "+bindings/run")
 (load! "+bindings/lisps")
 (load! "+bindings/python")

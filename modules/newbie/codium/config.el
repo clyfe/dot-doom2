@@ -129,6 +129,9 @@
 (when (modulep! :ui treemacs)
   (map! :after treemacs
         :map treemacs-mode-map
+        [mouse-1] 'treemacs-single-click-expand-action
+        "<left>" 'newbie-codium/treemacs-left-collapse-or-up
+        "<right>" 'newbie-codium/treemacs-right-expand-or-down
         ;; Free C-w for closing
         "<f2>" 'treemacs-rename-file
         [double-mouse-1] 'newbie-codium/open-and-keep ; Preview tab
