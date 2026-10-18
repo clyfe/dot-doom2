@@ -82,7 +82,8 @@
   (map! "<f2>" 'lsp-rename
         "M-F" 'lsp-format-buffer))
 (when (modulep! :tools lsp +eglot)
-  (map! "<f2>" 'eglot-rename))
+  (map! "<f2>" 'eglot-rename
+        "M-F" 'eglot-format-buffer))
 
 ;; Font
 (map! "C-=" 'doom/increase-font-size
