@@ -152,6 +152,9 @@
 (use-package! preview-tab
   :config (preview-tab-mode 1))
 
+;; DelSel
+(setopt delete-selection-save-to-register nil)
+
 ;; My very much custom bindings
 (load! "+bindings/run")
 (load! "+bindings/lisps")
